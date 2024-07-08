@@ -14,7 +14,7 @@ for message in st.session_state.messages:
 
 model = MBartForConditionalGeneration.from_pretrained("facebook/mbart-large-50-many-to-many-mmt")
 tokenizer = MBart50TokenizerFast.from_pretrained("facebook/mbart-large-50-many-to-many-mmt")
-tokenizer.src_lang = f"{"fr"}_XX"
+tokenizer.src_lang = "fr_XX"
 
 # React to user input
 if prompt := st.chat_input("What is up?"):
