@@ -28,7 +28,7 @@ encoded_p = tokenizer(sentence, return_tensors="pt")
 generated_tokens = model.generate(**encoded_p, forced_bos_token_id=tokenizer.lang_code_to_id["en_XX"])
 tgt_translation = tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
 
-response = f"Translate fr to en: {"".join(*tgt_translation)}"
+response = f"Translate fr to en: {''.join(*tgt_translation)}"
 # Display assistant response in chat message container
 with st.chat_message("assistant"):
     st.markdown(response)
