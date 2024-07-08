@@ -25,7 +25,7 @@ if prompt := st.chat_input("What is up?"):
     st.session_state.messages.append({"role": "user", "content": prompt})
 
 encoded_p = tokenizer(sentence, return_tensors="pt")
-generated_tokens = model.generate(**encoded_p, forced_bos_token_id=tokenizer.lang_code_to_id[f"{"en_XX"])
+generated_tokens = model.generate(**encoded_p, forced_bos_token_id=tokenizer.lang_code_to_id["en_XX"])
 tgt_translation = tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
 
 response = f"Translate fr to en: {*tgt_translation}"
